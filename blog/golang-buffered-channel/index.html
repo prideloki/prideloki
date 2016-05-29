@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<base href="https://prideloki.github.io/">
+<title>
+
+
+     Golang Buffered channel 
+
+</title>
+<link rel="canonical" href="https://prideloki.github.io/blog/golang-buffered-channel/">
+
+
+<script type="text/javascript">
+    var baseURL = 'https:\/\/prideloki.github.io\/';
+    var host = baseURL.substring(0, baseURL.length - 1).replace(/\//g, '');
+    if ((host === window.location.host) && (window.location.protocol !== 'https:')) {
+        window.location.protocol = 'https:';
+    }
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="/css/reset.css?1464532403">
+<link rel="stylesheet" href="/css/pygments.css?1464532403">
+<link rel="stylesheet" href="/css/main.css?1464532403">
+
+
+
+
+
+
+<link rel="shortcut icon"
+
+    href="/img/leaf.ico"
+
+>
+
+
+
+</head>
+
+
+<body lang="">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            <a href="/"><div class="name">Thanakom Sangnetra</div></a>
+            <nav>
+                <ul>
+                    <a href="/blog/"><li>Blog</li></a>
+                    <a href="/about/"><li>About</li></a>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="//www.github.com/prideloki" target="_blank">
+                <i class="icon ion-social-github"></i>
+            </a>
+        
+
+        
+
+        
+            <a href="//www.linkedin.com/in/thanakomsangnetra" target="_blank">
+                <i class="icon ion-social-linkedin"></i>
+            </a>
+        
+
+        
+
+        
+
+        
+            <a href="mailto:thanakom.sn@gmail.com">
+                <i class="icon ion-ios-email larger"></i>
+            </a>
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Golang Buffered channel
+
+</div>
+
+                    <div class="initials"><a href="https://prideloki.github.io/"></a></div>
+                </div>
+                <div class="meta">
+                    <div class="date" title="Sat Apr 16 2016 21:29:41 ICT">Apr 16, 2016</div>
+                    <div class="reading-time"><div class="middot"></div>1 minute read</div>
+                </div>
+            </div>
+            <div class="markdown">
+                <p>Just to put it here, to remind me why having a sending and receiving to a channel like the code below is not working.</p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+/*
+this example won't run since the #10
+cause the deadlock
+the channel need both sender and receiver to be ready
+but in this case we only create a sender #10
+where receiver hasn't execute yet(#16)
+we can solve this problem by using a buffered channel
+this would be make(chan int,2) since we have send 2 values into the channel
+*/
+ch := make(chan int)
+ch &lt;- 1
+ch &lt;- 2
+fmt.Println(&lt;-ch)
+fmt.Println(&lt;-ch)
+}
+</code></pre>
+
+<p>ref:
+<a href="http://guzalexander.com/2013/12/06/golang-channels-tutorial.html" target="_blank">Golang channels tutorial</a></p>
+
+                <br>
+                <p><a href="/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+</body>
+</html>
+

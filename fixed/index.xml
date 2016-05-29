@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fixeds on My New Hugo Site</title>
+    <link>https://prideloki.github.io/fixed/</link>
+    <description>Recent content in Fixeds on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 29 May 2016 21:21:49 +0700</lastBuildDate>
+    <atom:link href="https://prideloki.github.io/fixed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>About</title>
+      <link>https://prideloki.github.io/about/</link>
+      <pubDate>Sun, 29 May 2016 21:21:49 +0700</pubDate>
+      
+      <guid>https://prideloki.github.io/about/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m Top(yeah that&amp;rsquo;s my nickname). a developer from Bangkok, Thailand.
+I write Go, PHP, and a little bit of Javascript.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

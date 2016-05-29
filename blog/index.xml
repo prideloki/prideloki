@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on My New Hugo Site</title>
+    <link>https://prideloki.github.io/blog/</link>
+    <description>Recent content in Blogs on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 16 Apr 2016 21:29:41 +0700</lastBuildDate>
+    <atom:link href="https://prideloki.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Golang Buffered channel</title>
+      <link>https://prideloki.github.io/blog/golang-buffered-channel/</link>
+      <pubDate>Sat, 16 Apr 2016 21:29:41 +0700</pubDate>
+      
+      <guid>https://prideloki.github.io/blog/golang-buffered-channel/</guid>
+      <description>&lt;p&gt;Just to put it here, to remind me why having a sending and receiving to a channel like the code below is not working.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+/*
+this example won&#39;t run since the #10
+cause the deadlock
+the channel need both sender and receiver to be ready
+but in this case we only create a sender #10
+where receiver hasn&#39;t execute yet(#16)
+we can solve this problem by using a buffered channel
+this would be make(chan int,2) since we have send 2 values into the channel
+*/
+ch := make(chan int)
+ch &amp;lt;- 1
+ch &amp;lt;- 2
+fmt.Println(&amp;lt;-ch)
+fmt.Println(&amp;lt;-ch)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ref:
+&lt;a href=&#34;http://guzalexander.com/2013/12/06/golang-channels-tutorial.html&#34; target=&#34;_blank&#34;&gt;Golang channels tutorial&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How my task management tools change over time</title>
+      <link>https://prideloki.github.io/blog/how-my-task-management-tools-change-over-time/</link>
+      <pubDate>Sun, 23 Aug 2015 18:56:29 +0700</pubDate>
+      
+      <guid>https://prideloki.github.io/blog/how-my-task-management-tools-change-over-time/</guid>
+      <description>
+
+&lt;p&gt;I passionated about task management and productivity since I was in high school.
+The first time I heard about task management is when I came across &lt;a href=&#34;http://lifehacker.com/&#34; target=&#34;_blank&#34;&gt;LifeHacker&lt;/a&gt; website.
+Lifehacker provides productivity, self-improvement, and so on articles.
+I love to read those articles and then want to apply practices that I have read so I start to looking for task management tools.&lt;/p&gt;
+
+&lt;p&gt;And these are the task management tools that I have used over time.&lt;/p&gt;
+
+&lt;h2 id=&#34;homework-notepad&#34;&gt;Homework notepad&lt;/h2&gt;
+
+&lt;p&gt;this is the first tool that I had been used since kindergarten until my middle school. In my school, the homework notepad is required for students to list their assignment.&lt;/p&gt;
+
+&lt;p&gt;there are four columns:assignment name,due date,and parent signature on each pages. I don’t quite remember whether it helped me to hand my assignment on time though :).&lt;/p&gt;
+
+&lt;h2 id=&#34;notes-on-my-desk&#34;&gt;Notes on my desk&lt;/h2&gt;
+
+&lt;p&gt;When I was in my middle school, there are things that I always forgot to bring to my school. Things like the Khlui(it is a vertical duct flute from Thailand), my science projects, and my colored pencils. I had to call my parents to bring them for me to school(My school is about 10 mins walk from my house). Then I started to write a list of things I had to bring to my school on a note and put it on my desk. So the next day,it will remind me to bring my stuffs before i went to my school.&lt;/p&gt;
+
+&lt;h2 id=&#34;planner-books&#34;&gt;Planner books&lt;/h2&gt;
+
+&lt;p&gt;I had tried several planner books but I can’t really stick to use them. It’s nice that is intuitive and allowed rooms for creativity. I have seen videos on Youtube where people shares how they organise their planners. The most popular branded planner that I have heard of is &lt;a href=&#34;http://www.filofax.com/default_int.asp&#34; target=&#34;_blank&#34;&gt;Filofax&lt;/a&gt;. It’s expensive and hard to find a retailer in my country.&lt;/p&gt;
+
+&lt;h2 id=&#34;lazy-meter-http-blog-lazymeter-com&#34;&gt;&lt;a href=&#34;http://blog.lazymeter.com/&#34; target=&#34;_blank&#34;&gt;Lazy Meter&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;Lazy Meter is like a to-do list with charts. It tells you how many tasks you actually get done vs how many tasks you postpone. I used this for a while and then I move to Wunderlist. Unfortunately, this service has been closed.&lt;/p&gt;
+
+&lt;h2 id=&#34;wunderlist-https-www-wunderlist-com&#34;&gt;&lt;a href=&#34;https://www.wunderlist.com/&#34; target=&#34;_blank&#34;&gt;Wunderlist&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;I used Wunderlist v1. Back then, there isn’t much features that I want like sub tasks and tags. Now, Wunderlist v2 is better. I might give it a try someday.&lt;/p&gt;
+
+&lt;h2 id=&#34;evernote-http-www-evernote-com&#34;&gt;&lt;a href=&#34;http://www.evernote.com/&#34; target=&#34;_blank&#34;&gt;Evernote&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;I usually use Evernote for note-taking but Evernote could be your task management as well. If you search Evernote+GTD, you get the Secret Weapon in your search results. I have tried that. One task for one note and one project for one notebook. It sounds good, promising, and brilliant. But it’s kind of messy in my Evernote account and not practical for me. I want a separate view to see what I gonna do today, what I will do next.&lt;/p&gt;
+
+&lt;h2 id=&#34;2do-http-www-2doapp-com&#34;&gt;&lt;a href=&#34;http://www.2doapp.com/&#34; target=&#34;_blank&#34;&gt;2Do&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;This app is brilliant. I had been used it for 3 years(from freshmen to junior year). 2Do is only available on iOS devices and Andriod. It has a location-based notification, tags, project lists, and subtasks. But I want to use the app on my PC as well. So I switched to Trello.&lt;/p&gt;
+
+&lt;h2 id=&#34;trello-https-trello-com&#34;&gt;&lt;a href=&#34;https://trello.com/&#34; target=&#34;_blank&#34;&gt;Trello&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;Trello is a kan-ban board with awesome features. I had used it for a year. One problem that I faced is i have multiple boards and now it’s hard to keep track of. I want a dash board where I can see all my task across boards.&lt;/p&gt;
+
+&lt;h2 id=&#34;asana-http-asana-com&#34;&gt;&lt;a href=&#34;http://asana.com/&#34; target=&#34;_blank&#34;&gt;Asana&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;What I love about Asana is the ‘My Tasks’ view like I mentioned in my previous post. I can move tasks across 4 sections: Today, Up coming, Later, and New Tasks&lt;/p&gt;
+
+&lt;p&gt;I changed my task management tools over times because the complexity of my works. I remembered that I loved to spend time looking for a new perfect task management tool. The one that will be my only solution for my task management and then I realized it doesn’t all about the tools, it’s about how I work and manage my tasks.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>My 3 favourite productivity apps</title>
+      <link>https://prideloki.github.io/blog/my-3-favourite-productivity-apps/</link>
+      <pubDate>Sat, 18 Jul 2015 18:47:42 +0700</pubDate>
+      
+      <guid>https://prideloki.github.io/blog/my-3-favourite-productivity-apps/</guid>
+      <description>&lt;p&gt;There are certain apps that people use everyday or couldn’t live without them. Some of them are social media apps.
+But I would like to share my productive apps.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://getpocket.com/&#34; target=&#34;_blank&#34;&gt;Pocket&lt;/a&gt;
+These app helps me get rid of bookmarks for read later. Whenever i find an interesting article, i usually use the pocket chrome extension. the chrome extension is easy to use, just click the icon and it will save the article. I can read articles on any devices like PC(Website, Mac), Mobile(iPad,iPhone). On my iPhone, i can share an article to pocket as well. I love that this app is on any devices and it syncs nicely with other devices. The saved articles on my pocket app keep growing so I tried to read some of them while I am commuting. I would recommend my friends who keep lots of tabs on their browser to use Pocket. It saves you times.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://evernote.com/&#34; target=&#34;_blank&#34;&gt;Evernote&lt;/a&gt;
+this is the most popular note-taking platform. I love &lt;a href=&#34;https://www.google.co.th/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=1&amp;amp;cad=rja&amp;amp;uact=8&amp;amp;ved=0CB8QFjAAahUKEwjhm-Pz8-PGAhUSCI4KHZAhDLw&amp;amp;url=https%3A%2F%2Fevernote.com%2Fwebclipper%2F&amp;amp;ei=cd6pVaGfJJKQuASQw7DgCw&amp;amp;usg=AFQjCNEVwQ7jyQWRmUhwkrNbfL-pCvv2lw&amp;amp;sig2=ZgkuKbb6-RMoVy9HWeUsbA&amp;amp;bvm=bv.98197061,d.c2E&#34; target=&#34;_blank&#34;&gt;their Web clipper chrome extension.&lt;/a&gt; I can’t live without it.
+It makes saving content on website more easier. I keep those content for later references.
+I also keep my journals and goals on Evernote. Tips for those who can’t seem to stick with writing Journal, I suggest you to use the &lt;a href=&#34;https://ifttt.com/recipes/133689-daily-evernote-journal-template&#34; target=&#34;_blank&#34;&gt;IFTT service to create your note everyday at a certain time.&lt;/a&gt; That will cut the cost of creating note everyday so you can focus on start writing Journal instead. I’m a premium Evernote user. I have faced issues a couple time with my syncing notes. I had contacted a customer support service. They helped me as much as they could to solve my issues since I provided them detailed steps I took to produce issue and solve issues( they don’t have the right to access my note content so I have to fix it myself with their helpful instructions).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://asana.com/&#34; target=&#34;_blank&#34;&gt;Asana&lt;/a&gt;
+Asana is a project management application. But you can use for your personal management.
+I’ve been using Asana for almost a year. What I love about Asana is the &lt;a href=&#34;https://asana.com/guide/help/fundamentals/my-tasks&#34; target=&#34;_blank&#34;&gt;My Tasks view&lt;/a&gt;, there is a list divided by 4 sections: New Tasks, Today, Upcoming, Later. This allows me to focus on Today tasks and see what tasks are waiting for me in the Upcoming section. I can promote my tasks from Upcoming to Today if I want to and put them back if there are more important and urgent tasks come up.&lt;/p&gt;
+
+&lt;p&gt;This is my very first blog, Plus my English is my second language.
+Hope whom ever come across this blog find this useful though ;P&lt;/p&gt;
+
+&lt;p&gt;Have a nice day.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
